@@ -11,7 +11,13 @@ http://datagenetics.com/blog/july12019/index.html
 
 '''
 def sin_approx(x):
-    return 16*x*(np.pi-x) / (5*np.pi**2-4*x*(np.pi-x))
+    return (16*x*np.pi-16*x**2) / (5*np.pi**2-4*x*np.pi + 4*x**2) # 16*x*(np.pi-x) / (5*np.pi**2-4*x*(np.pi-x))
+
+def sin_taylor(x):
+    return x - (x**3)/6
+
+def cos_taylor(x):
+    return 1- (x**2)/2  
 
 def cos_approx(x):
     return (np.pi**2-4*x**2) / (np.pi**2 + x**2)
@@ -45,7 +51,7 @@ gamma = gamma_1 + epsilon
 p_A = np.array([0,0])
 p_E = np.array([1,1]) # TODO: ändern zum richtigen Wert
 p_B = cp.vstack([p_A[0] + l1*cos_add(alpha_const,alpha),p_A[1]+l1*sin_add(alpha_const,alpha)])
-p_D = cp.vstack([p_E[0] + l4*cos_add(epsilon_const,epsilon),p_E[1] + l4*sin_add(epsilon_const,epsilon)])
+#p_D = cp.vstack([p_E[0] + l4*cos_add(epsilon_const,epsilon),p_E[1] + l4*sin_add(epsilon_const,epsilon)])
 
 #abs_BminusH = l2**2-l3**2+cp.norm(p_D-p_B)**2
 #abs_CminusH = cp.sqrt(l2**2-abs_BminusH**2)
