@@ -17,7 +17,7 @@ l2 = 46.92  # mm
 l3 = 18.92  # mm
 l4 = 56.43  # mm
 l5 = 18.92  # mm
-
+# define constant and variale angles 
 alpha = np.radians(-6)
 beta = np.radians(90)
 eta = np.radians(-20)
@@ -25,11 +25,10 @@ vis.open()
 
 while alpha <= np.radians(19):
 
-    alpha_l =   -np.pi -alpha -eta
-    epsilon = - alpha_l - np.arcsin(l2/l4) - np.pi*(17/100)
-    epsilon_l = epsilon + eta #-np.pi*(5/100)
+
+    epsilon_l = -eta + alpha + np.arcsin(l2/l4) - np.pi*(12/100) # offset
     delta = alpha - np.arcsin(l2/l4)
-    gamma = np.arcsin(l1/l4) + epsilon
+    #gamma = np.arcsin(l1/l4) + epsilon
 
     # Point E (origin, assumed to be at [0, 0, 0])
     pE = np.array([0, 0, 0])
