@@ -12,11 +12,11 @@ vis["/Cameras/default"].set_transform(tf.translation_matrix([1, 1, 80]))
 vis.delete()
 
 # Define the lengths of the sides in millimeters from the image
-l1 = 32.39  # mm
-l2 = 46.92  # mm
-l3 = 18.92  # mm
-l4 = 56.43  # mm
-l5 = 18.92  # mm
+l1 = 31.75  # mm
+l2 = 47.52  # mm
+l3 = 19.05  # mm
+l4 = 57.15  # mm
+l5 = l3  # mm
 # define constant and variale angles 
 alpha = np.radians(-6)
 beta = np.radians(90)
